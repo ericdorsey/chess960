@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="chess960.css">
+    <script src="chess960.js"></script>
+  </head>
+
+  <!--<body onload="drawOnBoard(200, drawPositions(positions[200]));">-->
+  <body onload="go();">    
+
+<div id="outermost">
+
+<div id="board">
+
+
+<div class="notation item"></div>
+<div class="notation item">a</div>
+<div class="notation item">b</div>
+<div class="notation item">c</div>
+<div class="notation item">d</div>
+<div class="notation item">e</div>
+<div class="notation item">f</div>
+<div class="notation item">g</div>
+<div class="notation item">h</div>
+<div class="notation item"></div>
+
+<break></break>
+
+<div class="notation item">8</div>
+<div id="a8" class="item piece white">a8</div>
+<div id="b8" class="item piece black">b8</div>
+<div id="c8" class="item piece white">c8</div>
+<div id="d8" class="item piece black">d8</div>
+<div id="e8" class="item piece white">e8</div>
+<div id="f8" class="item piece black">f8</div>
+<div id="g8" class="item piece white">g8</div>
+<div id="h8" class="item piece black">h8</div>
+<div class="notation item">8</div>
+
+<break></break>
+<p></p>
+
+<div class="notation item">1</div>
+<div id="a1" class="item piece black">a1</div>
+<div id="b1" class="item piece white">b1</div>
+<div id="c1" class="item piece black">c1</div>
+<div id="d1" class="item piece white">d1</div>
+<div id="e1" class="item piece black">e1</div>
+<div id="f1" class="item piece white">f1</div>
+<div id="g1" class="item piece black">g1</div>
+<div id="h1" class="item piece white">h1</div>
+<div class="notation item">1</div>
+
+<break></break>
+
+<div class="notation item"></div>
+<div class="notation item">a</div>
+<div class="notation item">b</div>
+<div class="notation item">c</div>
+<div class="notation item">d</div>
+<div class="notation item">e</div>
+<div class="notation item">f</div>
+<div class="notation item">g</div>
+<div class="notation item">h</div>
+<div class="notation item"></div>
+
+</div>
+
+
+<span id="thisposline">
+Showing Chess 960 position # <span id="whichposfield"></span>
+</span>
+
+
+<form id="getpositionsform">
+    <input type="button" class="button" onclick="go()" id="getrandom" value="Get A Random Chess 960 Position">
+    <div class="spaceydiv">
+    -- or --
+    </div>
+    <input type="button" class="button" onclick="specific_go()" id="getspecific" value="Get Specific Chess 960 Position"> 
+    <input type="text" id="getspecificinput" size=2 maxlength=3>
+    <br>
+    <span id="specificinstruct">Enter a number between 1 and 960 in the field above</span>
+</form>
+
+
+<div id="whatis">
+<div id="whatiscontent">
+<p>
+<a href="https://en.wikipedia.org/wiki/Chess960">What is Chess 960 (AKA Fischer Random)?</a>
+</p>
+"Chess960, also known as Fischer Random Chess, is a variant of chess invented and advocated by former world chess champion Bobby Fischer. It employs the same board and pieces as standard chess, but the starting position of the pieces on the players' home ranks is randomized, under certain constraints. The random setup renders the prospect of obtaining an advantage through the memorization of opening lines impracticable, compelling players to rely instead on their talent and creativity."
+
+
+<hr>
+
+This Chess 960 Generator created by <a href="https://twitter.com/EricDorsey">Eric Dorsey</a>. 
+If you find it useful and are so compelled you can <a href="https://www.paypal.com/paypalme2/donatetoericdorsey">buy me a coffee</a>.
+Source code <a href="https://github.com/ericdorsey/ericdorsey.github.io/tree/master/chess960">here</a>.
+</div>
+</div>
+
+</div>
+
+</body>
+
+</html>
