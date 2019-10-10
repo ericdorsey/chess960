@@ -17,9 +17,13 @@
   </head>
 
   <!--<body onload="drawOnBoard(200, drawPositions(positions[200]));">-->
-  <body onload="go();">    
+<body onload="go();">    
 
 <div id="outermost">
+
+<h1>Chess960: What The Fischer?!</h1>
+<h2>A Chess 960 Starting Position Generator</h2>
+
 
 <div id="board">
 
@@ -79,7 +83,7 @@
 
 
 <span id="thisposline">
-Showing Chess 960 position # <span id="whichposfield"></span>
+Showing Chess960 position # <span id="whichposfield"></span>
 </span>
 
 
@@ -89,23 +93,39 @@ Showing Chess 960 position # <span id="whichposfield"></span>
     -- or --
     </div>
     <input type="button" class="button" onclick="specific_go()" id="getspecific" value="Get Specific Chess 960 Position"> 
-    <input type="text" id="getspecificinput" size=2 maxlength=3>
+    <input type="text" id="getspecificinput" onchange="errorCheck()" oninput="errorCheck()" size=3 maxlength=3>
     <br>
-    <span id="specificinstruct">Enter a number between 1 and 960 in the field above</span>
+    <span id="specificinstruct">Enter a number (*SPID) between 0 and 959 in the field above</span>
+    <br>
+    <span id="errorout" class="error">&nbsp;</span>
 </form>
 
 
 <div id="whatis">
 <div id="whatiscontent">
 <p>
+
+Upon first seeing the combination of pieces above, a person might be thinking <span class="italic bold">"What the Fishcer is going on here?!"</span>, but these positions are indeed normal for Chess 960! <span class="italic reallysmalltext">(Unless the starting position happened to display SPID 518, as that is the Chess 960 starting position that happens to match tradtional chess!)</span>
+<p>
 <a href="https://en.wikipedia.org/wiki/Chess960">What is Chess 960 (AKA Fischer Random)?</a>
 </p>
+<p class="quoted">
 "Chess960, also known as Fischer Random Chess, is a variant of chess invented and advocated by former world chess champion Bobby Fischer. It employs the same board and pieces as standard chess, but the starting position of the pieces on the players' home ranks is randomized, under certain constraints. The random setup renders the prospect of obtaining an advantage through the memorization of opening lines impracticable, compelling players to rely instead on their talent and creativity."
-
+</p>
+<br>
+<span class="bold">See Also:</span>
+<br><a href="https://www.youtube.com/watch?v=mPfGVJW7ND0">(Video) Learn to Play Chess960 (Fischer Random)</a>
+<br><a href="https://chess960.net/how-to-play/">Chess960.net: How To Play</a>
+<br><a href="https://www.mark-weeks.com/cfaa/chess960/c960strt.htm">Mark Weeks Chess 960</a>
+<br><a href="http://www.caissa.com/encyclopedia/chess960.php">Caissa's Web: Chess960</a>
 
 <hr>
 
-This Chess 960 Generator created by <a href="https://twitter.com/EricDorsey">Eric Dorsey</a>. 
+*<span class="bold">SPID</span> = Starting Position Identifier. Starts counting at 0 and ends at 959; the SPIDs are unique identifiers for all possible Chess 960 combinations.
+
+<hr>
+
+<span class="bold">Chess960: What The Fischer?!</span> Chess960 Staring Position Generator created by <a href="https://twitter.com/EricDorsey">Eric Dorsey</a>. 
 If you find it useful and are so compelled you can <a href="https://www.paypal.com/paypalme2/donatetoericdorsey">buy me a coffee</a>.
 Source code <a href="https://github.com/ericdorsey/chess960">here</a>.
 </div>

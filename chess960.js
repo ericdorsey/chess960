@@ -1043,6 +1043,22 @@ var getrandom = document.getElementById("getrandom");
 var getspecific = document.getElementById("getspecific");
 
 
+
+function errorCheck() {
+    console.log("errorCheck() fired");
+    var errorout = document.getElementById("errorout");
+    if (getspecificinput.value > 959) {
+        errorout.innerHTML = "Must be a number between 0 and 959!";
+    }
+    if (isNaN(getspecificinput.value)) {
+        // Get the error output span
+        errorout.innerHTML = "Must be a number between 0 and 959!";
+    } if (getspecificinput.value === "") {
+        errorout.innerHTML = "&nbsp;";
+    }
+}
+
+
 // Make a random one and draw it on the board
 function go() {
     // Clear out the getspecificinput field if it had a value from before
@@ -1057,6 +1073,7 @@ function go() {
 function specific_go() {
     // Get Specific Position Text Input
     var getspecificinput = document.getElementById("getspecificinput").value;
+    //getspecificinput.onchange = errorCheck();
     getspecificinput = getspecificinput.toString();
     console.log("getspecificinput is " + getspecificinput)
     

@@ -1,12 +1,38 @@
 /* Styles go here */
 
 body {
-    font-family: "Roboto";
+    font-family: "Arial";
+}
+
+h1, h2 {
+    font-family: "Arial";
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
+p {
+    margin-bottom: 0px;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    font-weight: bold;
+    overflow: auto;
 }
 
 .notation {
     font-size: 20px;
     font-family: monospace;
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.bold {
     font-weight: bold;
 }
 
@@ -30,6 +56,16 @@ hr {
 
 .break {
     width: 100%;
+}
+
+.reallysmalltext {
+    font-size: 11px;
+}
+
+.quoted {
+    margin-left: 5%;
+    margin-right: 5%;
+    font-style: italic;
 }
 
 #outermost {
@@ -102,14 +138,14 @@ break{
 }
 
 #whatis {
-    padding-top: 10%;
+    padding-top: 5%;
     display: flex;
     justify-content: center;
 }
 
 #whatiscontent {
     flex: 0 0 65%;
-    font-size: 12px;
+    font-size: 15px;
     font-family: "Arial";
     text-align: left;
 }
