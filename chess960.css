@@ -42,7 +42,6 @@ a {
 }
 
 .spaceydiv {
-    padding: 5px;
     font-size: 20px;
 }
 
@@ -59,13 +58,14 @@ hr {
 }
 
 .reallysmalltext {
-    font-size: 11px;
+    font-size: 12px;
 }
 
 .quoted {
     margin-left: 5%;
     margin-right: 5%;
     font-style: italic;
+    font-size: 15.5px;
 }
 
 #outermost {
@@ -116,8 +116,8 @@ break{
     font-family: "Arial";
     font-size: 24px;
     display: block;
-    padding-top: 12px;
-    padding-bottom: 26px;
+    padding-top: 1px;
+    padding-bottom: 6px;
 }
 
 #getpositionsform {
@@ -146,7 +146,7 @@ break{
 
 #whatiscontent {
     flex: 0 0 65%;
-    font-size: 15px;
+    font-size: 16px;
     font-family: "Arial";
     text-align: left;
 }

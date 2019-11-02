@@ -13,7 +13,6 @@
   </script>
 
     <link rel="stylesheet" href="chess960.css">
-    <script src="chess960.js"></script>
   </head>
 
   <!--<body onload="drawOnBoard(200, drawPositions(positions[200]));">-->
@@ -87,13 +86,13 @@ Showing Chess960 position # <span id="whichposfield"></span>
 </span>
 
 
-<form id="getpositionsform">
+<form id="getpositionsform" onSubmit="return false;">
     <input type="button" class="button" onclick="go()" id="getrandom" value="Get A Random Chess 960 Position">
     <div class="spaceydiv">
     -- or --
     </div>
     <input type="button" class="button" onclick="specific_go()" id="getspecific" value="Get Specific Chess 960 Position"> 
-    <input type="text" id="getspecificinput" onchange="errorCheck()" oninput="errorCheck()" size=3 maxlength=3>
+    <input type="text" id="getspecificinput" onchange="errorCheck(event)" oninput="errorCheck(event)" onkeypress="errorCheck(event)" size=3 maxlength=3>
     <br>
     <span id="specificinstruct">Enter a number (*SPID) between 0 and 959 in the field above</span>
     <br>
@@ -133,6 +132,7 @@ Source code <a href="https://github.com/ericdorsey/chess960">here</a>.
 
 </div>
 
+<script src="chess960.js"></script>
 </body>
 
 </html>

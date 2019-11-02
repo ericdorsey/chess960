@@ -981,8 +981,31 @@ var pieces = {
     "bp" : "\u265F"
 }
 
+var temp_pieces_string = "";
 for (var i in pieces) {
-    console.log(i, pieces[i]);
+    temp_pieces_string += i + " ";
+}
+temp_pieces_string = temp_pieces_string.trim();
+console.log("temp_pieces_string: " + temp_pieces_string);
+
+// "This is 960 Position {foo}" span
+var thisposline = document.getElementById("thisposline");
+
+// Get Random Position Button
+var getrandom = document.getElementById("getrandom");
+
+// Get Specific Position Button
+var getspecific = document.getElementById("getspecific");
+
+function getRandomPosition() {
+    //console.log("getRandomPosition called");
+    //console.log(positions);
+    var positions_keys = Object.keys(positions);
+    var random_key = positions_keys[Math.floor(Math.random() * positions_keys.length)];
+    var random_value = positions[random_key];
+    //console.log(random_key);
+    console.log(random_value);
+    return [random_key, random_value];
 }
 
 function getRandomPosition() {
@@ -1003,15 +1026,17 @@ function getRandomPosition() {
 function drawPositions(my_position) {
     var black_pieces = "";
     var white_pieces = "";
+    var my_position_string = "";
     for (var i in my_position) {
     //for (var i in my_position[1]) {
-        //console.log(rand_pos[1][i]);
-        console.log(my_position[i]);
+        //console.log(my_position[i]);
+        my_position_string += my_position[i];
         var curr_piece = my_position[i];
         //var curr_piece = rand_pos[1][i]
         black_pieces += pieces["b" + curr_piece.toLowerCase()];
         white_pieces += pieces["w" + curr_piece.toLowerCase()];
     }
+    console.log("my_position_string: " + my_position_string);
     return [black_pieces, white_pieces];
 }
 
@@ -1019,30 +1044,30 @@ function drawPositions(my_position) {
 function drawOnBoard(whichpos, my_position) {
     console.log("drawOnBoard() called");
     console.log(whichpos, my_position);
+    var outer_board_string = "";
     for (var k in numbers) {
-        console.log(k);
+        //console.log(k);
+        var inner_board_string = "";
         for (var i in letters) {
-            console.log(letters[i] + numbers[0])
+            var curr_letters_numbers = letters[i] + numbers[k];
+            //console.log("curr_letters_numbers: " + curr_letters_numbers);
+            //console.log(letters[i] + numbers[0])
             var curr_field = document.getElementById(letters[i] + numbers[k]);
             curr_field.innerText = my_position[k][i];
-            console.log(curr_field);
+            //console.log(curr_field);
+            //console.log(curr_letters_numbers + " " + curr_field.innerHTML);
+            inner_board_string += curr_letters_numbers + " " + curr_field.innerHTML + " ";
+        }
+        outer_board_string += inner_board_string;
+        console.log(outer_board_string.split(" ").length);
+        if ((outer_board_string.split(" ").length - 1) === 16) {
+            outer_board_string += "\n";
         }
     }
+    console.log(outer_board_string);
     var whichposfield = document.getElementById("whichposfield");
     whichposfield.innerText = whichpos.toString();
 }
-
-
-// "This is 960 Position {foo}" span
-var thisposline = document.getElementById("thisposline");
-
-// Get Random Position Button
-var getrandom = document.getElementById("getrandom");
-
-// Get Specific Position Button
-var getspecific = document.getElementById("getspecific");
-
-
 
 function errorCheck() {
     console.log("errorCheck() fired");
@@ -1055,9 +1080,10 @@ function errorCheck() {
         errorout.innerHTML = "Must be a number between 0 and 959!";
     } if (getspecificinput.value === "") {
         errorout.innerHTML = "&nbsp;";
+    } else if (event.key === "Enter") {
+        specific_go();
     }
 }
-
 
 // Make a random one and draw it on the board
 function go() {
@@ -1071,11 +1097,11 @@ function go() {
 }
 
 function specific_go() {
+    console.log("specific_go() fired");
     // Get Specific Position Text Input
     var getspecificinput = document.getElementById("getspecificinput").value;
     //getspecificinput.onchange = errorCheck();
     getspecificinput = getspecificinput.toString();
     console.log("getspecificinput is " + getspecificinput)
-    
     drawOnBoard(getspecificinput, drawPositions(positions[getspecificinput]))
 }
