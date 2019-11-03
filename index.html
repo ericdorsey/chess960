@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
+<head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149681990-1"></script>
-  <script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149681990-1"></script>
+    <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
     gtag('config', 'UA-149681990-1');
-  </script>
+    </script>
 
     <link rel="stylesheet" href="chess960.css">
-  </head>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+</head>
 
-  <!--<body onload="drawOnBoard(200, drawPositions(positions[200]));">-->
 <body onload="go();">    
 
 <div id="outermost">
@@ -23,9 +24,7 @@
 <h1>Chess960: What The Fischer?!</h1>
 <h2>A Chess 960 Starting Position Generator</h2>
 
-
 <div id="board">
-
 
 <div class="notation item"></div>
 <div class="notation item">a</div>
@@ -80,11 +79,9 @@
 
 </div>
 
-
 <span id="thisposline">
 Showing Chess960 position # <span id="whichposfield"></span>
 </span>
-
 
 <form id="getpositionsform" onSubmit="return false;">
     <input type="button" class="button" onclick="go()" id="getrandom" value="Get A Random Chess 960 Position">
@@ -104,7 +101,7 @@ Showing Chess960 position # <span id="whichposfield"></span>
 <div id="whatiscontent">
 <p>
 
-Upon first seeing the combination of pieces above, a person might be thinking <span class="italic bold">"What the Fishcer is going on here?!"</span>, but these positions are indeed normal for Chess 960! <span class="italic reallysmalltext">(Unless the starting position happened to display SPID 518, as that is the Chess 960 starting position that happens to match tradtional chess!)</span>
+Upon first seeing the combination of pieces above, a person might be thinking <span class="italic bold">"What the Fishcer is going on here?!"</span>, but these positions are indeed normal for Chess 960! <span class="italic reallysmalltext">(Unless the starting position randomly generated is SPID 518, as that is the Chess 960 starting position that matches tradtional chess!)</span>
 <p>
 <a href="https://en.wikipedia.org/wiki/Chess960">What is Chess 960 (AKA Fischer Random)?</a>
 </p>
