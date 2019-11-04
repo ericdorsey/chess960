@@ -17,7 +17,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 </head>
 
-<body onload="go();">    
+<body onload="randomGo();">    
 
 <div id="outermost">
 
@@ -84,12 +84,12 @@ Showing Chess960 position # <span id="whichposfield"></span>
 </span>
 
 <form id="getpositionsform" onSubmit="return false;">
-    <input type="button" class="button" onclick="go()" id="getrandom" value="Get A Random Chess 960 Position">
+    <input type="button" class="button" onclick="randomGo()" id="getrandom" value="Get A Random Chess 960 Position">
     <div class="spaceydiv">
     -- or --
     </div>
-    <input type="button" class="button" onclick="specific_go()" id="getspecific" value="Get Specific Chess 960 Position"> 
-    <input type="text" id="getspecificinput" onchange="errorCheck(event)" oninput="errorCheck(event)" onkeypress="errorCheck(event)" size=3 maxlength=3>
+    <input type="button" class="button" onclick="errorCheck(event)" id="getspecific" value="Get Specific Chess 960 Position"> 
+    <input type="text" id="getspecificinput" onSubmit="if (event.keyCode == 13) { errorCheck(event) }" onkeypress="if (event.keyCode == 13) { errorCheck(event) }" onkeydown="if (event.keyCode == 13) { errorCheck(event) }" size=3 maxlength=3>
     <br>
     <span id="specificinstruct">Enter a number (*SPID) between 0 and 959 in the field above</span>
     <br>
@@ -108,13 +108,23 @@ Upon first seeing the combination of pieces above, a person might be thinking <s
 <p class="quoted">
 "Chess960, also known as Fischer Random Chess, is a variant of chess invented and advocated by former world chess champion Bobby Fischer. It employs the same board and pieces as standard chess, but the starting position of the pieces on the players' home ranks is randomized, under certain constraints. The random setup renders the prospect of obtaining an advantage through the memorization of opening lines impracticable, compelling players to rely instead on their talent and creativity."
 </p>
-<br>
-<span class="bold">See Also:</span>
-<br><a href="https://www.youtube.com/watch?v=mPfGVJW7ND0">(Video) Learn to Play Chess960 (Fischer Random)</a>
-<br><a href="https://chess960.net/how-to-play/">Chess960.net: How To Play</a>
-<br><a href="https://www.mark-weeks.com/cfaa/chess960/c960strt.htm">Mark Weeks Chess 960</a>
-<br><a href="http://www.caissa.com/encyclopedia/chess960.php">Caissa's Web: Chess960</a>
 
+<br>
+<span class="bold">About Chess960:</span>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=mPfGVJW7ND0">(Video) Learn to Play Chess960 (Fischer Random)</a>
+<li><a href="https://chess960.net/how-to-play/">Chess960.net: How To Play</a>
+<li><a href="https://www.mark-weeks.com/cfaa/chess960/c960strt.htm">Mark Weeks Chess 960</a>
+<li><a href="http://www.caissa.com/encyclopedia/chess960.php">Caissa's Web: Chess960</a>
+</ul>
+
+<br>
+<span class="bold">Chess960 News:</span>
+<ul>
+<li><a href="https://www.chess.com/news/search?keyword=Chess960">Chess.com News; Topic Chess960</a>
+<li><a href="https://www.chess.com/news/search?keyword=Fischer+Random">Chess.com News; Topic Fischer Random</a>
+<li><a href="https://twitter.com/search?q=%23Chess960&src=recent_search_click&f=live">Twitter: #Chess960</a>
+</ul>
 <hr>
 
 *<span class="bold">SPID</span> = Starting Position Identifier. Starts counting at 0 and ends at 959; the SPIDs are unique identifiers for all possible Chess 960 combinations.
