@@ -991,8 +991,6 @@ var getrandom = document.getElementById("getrandom");
 // Get Specific Position Button
 var getspecific = document.getElementById("getspecific");
 
-var cleaninputform = false;
-
 function getRandomPosition() {
     //console.log("getRandomPosition called");
     //console.log(positions);
@@ -1065,7 +1063,7 @@ function drawBoardOnPage(whichpos, my_position) {
 // Function to check the getspecificinput input box (verify not > 959, is a number, etc)
 // Also allows hitting Enter on the field to generate the position (along with hitting the button)
 function errorCheck(event) {
-    cleaninputform = false;
+    var cleaninputform = false;
     console.log("errorCheck() fired");
     var errorout = document.getElementById("errorout");
     errorout.innerHTML = "&nbsp;";
